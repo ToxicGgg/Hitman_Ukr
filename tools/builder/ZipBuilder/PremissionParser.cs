@@ -118,6 +118,20 @@ namespace ZipBuilder
                             FullKey = $"{parent.FullKey}.{key}"
                         });
                     }
+                    else if (trimmedLine.StartsWith("\"") && trimmedLine.EndsWith("\""))
+                    {
+                        var key = trimmedLine.Substring(1);
+                        key = key.Substring(0, key.Length - 1);
+                        var parent = stack.Peek();
+                        parent.Children.Add(new PremissionHLocClass
+                        {
+                            Key = key,
+                            Value = "",
+                            Num1 = currentNum1,
+                            Num2 = currentNum2,
+                            FullKey = $"{parent.FullKey}.{key}"
+                        });
+                    }                    
                 }
 
             }
@@ -174,6 +188,10 @@ namespace ZipBuilder
 
                 sb.Append(indent);
                 sb.AppendLine("]");
+            }else if (node.Value == "")
+            {
+                sb.Append(indent);
+                sb.AppendLine($"\"{node.Key}\"");
             }
         }
 

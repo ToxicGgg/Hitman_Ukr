@@ -65,7 +65,10 @@ namespace ZipBuilder
         {
             if (hLocMap.TryGetValue(node.FullKey, out var hLocNode))
             {
-                node.Value = hLocNode.value;
+                if (!string.IsNullOrEmpty(node.Value))
+                {
+                    node.Value = hLocNode.value;
+                }
             }
 
             foreach (var child in node.Children)
