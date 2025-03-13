@@ -6485,7 +6485,7 @@
             {
               "name": "AutoCrouchWhenTighteningFiberWire",
               "org_tbyte": 9,
-              "value": "СПРОСТИТИ ДУХАННЯ",
+              "value": "ПРИСIСТИ ПРИ НАТЯГУВАННI УДАВКИ",
               "numChildren": 0,
               "type": "data"
             },
