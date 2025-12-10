@@ -19,9 +19,7 @@ jobs:
           dotnet-version: "8.0.x"
 
       - name: Install Inno Setup
-        run: |
-          Invoke-WebRequest -Uri "https://jrsoftware.org/download.php/is.exe" -OutFile "innosetup.exe"
-          Start-Process "innosetup.exe" "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART" -Wait
+        run: choco install innosetup -y
 
       - name: Restore dependencies
         working-directory: tools/builder
@@ -40,9 +38,7 @@ jobs:
           Expand-Archive -Path "Hitman_Ukr.zip" -DestinationPath "output" -Force
 
       - name: Build installer (silent)
-        run: |
-          $iscc = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
-          & "$iscc" "${{ github.workspace }}\setup.iss"
+        run: ISCC.exe "${{ github.workspace }}\installer\setup.iss"
 
       - name: Upload installer
         uses: softprops/action-gh-release@v2
