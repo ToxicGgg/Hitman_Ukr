@@ -163,7 +163,7 @@
               "numChildren": 0,
               "org_tbyte": 9,
               "type": "data",
-              "value": "Живий щит"
+              "value": "درع بشري"
             },
             {
               "name": "HumanShieldRelease",
@@ -198,7 +198,7 @@
               "numChildren": 0,
               "org_tbyte": 9,
               "type": "data",
-              "value": "Вiдкрити дверi"
+              "value": "افتح الباب"
             },
             {
               "name": "OperateDoor",
@@ -415,7 +415,7 @@
               "numChildren": 0,
               "org_tbyte": 9,
               "type": "data",
-              "value": "хiмiка"
+              "value": "الكميميائي"
             },
             {
               "name": "M01_ChileanGuard",
